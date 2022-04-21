@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>{{title}}</title>
+</head>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Коментарии пользователей</h1>
+<div>
+    <a href="/" class="btn btn-primary">
+        вернутся
+    </a>
+</div>
+{% for item in comm%}
+<div class="col-md6 border rounded">
+    <h3>Автор - {{item.author}}</h3>
+    <h7>
+        Дата написания - {{item.created_date}}
+    </h7>
+    <h5>
+        {{item.content}}
+    </h5>
+</div>
+
+{% endfor %}
+{% endblock %}
